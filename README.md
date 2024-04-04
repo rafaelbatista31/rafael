@@ -1,4 +1,4 @@
-<html>
+<!DOCTYPE html>
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
@@ -47,16 +47,16 @@
 
 <div class="container">
     <div class="question">
-        <p>Cansado de um dia longo?</p>
-        <input type="text" placeholder="Resposta">
+        <label for="tired">Cansado de um dia longo?</label>
+        <input type="text" id="tired" placeholder="Resposta (Sim ou Não)">
     </div>
     <div class="question">
-        <p>Quantas horas trabalhaste hoje?</p>
-        <input type="text" placeholder="Resposta">
+        <label for="hours">Quantas horas trabalhaste hoje?</label>
+        <input type="text" id="hours" placeholder="Resposta (número de horas)">
     </div>
     <div class="question">
-        <p>Faz a tua escolha: Whiskey ou Cerveja</p>
-        <input type="text" placeholder="Resposta">
+        <label for="drink">Faz a tua escolha: Whiskey ou Cerveja</label>
+        <input type="text" id="drink" placeholder="Resposta (Whiskey ou Cerveja)">
     </div>
     <button>Enviar</button>
 </div>
@@ -66,7 +66,7 @@
         var respostas = document.querySelectorAll('input[type="text"]');
         var mensagem = '';
 
-        if (respostas[0].value === 'Sim') {
+        if (respostas[0].value.toLowerCase() === 'sim') {
             mensagem += 'Sério? Espero que possa relaxar em breve!';
         } else {
             mensagem += 'Tudo bem, espero que possa descansar mais tarde.';
@@ -81,6 +81,8 @@
             } else {
                 mensagem += ' Introduz um número a sério...';
             }
+        } else {
+            mensagem += ' Introduz um número a sério...';
         }
 
         var bebida = respostas[2].value.toLowerCase();
