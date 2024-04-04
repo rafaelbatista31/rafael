@@ -3,100 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Questionário</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f0f0f0;
-            margin: 0;
-            padding: 0;
-        }
-        .container {
-            max-width: 600px;
-            margin: 20px auto;
-            background-color: #fff;
-            border-radius: 10px;
-            padding: 20px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        }
-        .question {
-            margin-bottom: 20px;
-            padding: 20px;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-            background-color: #f9f9f9;
-        }
-        input[type="text"] {
-            width: calc(100% - 10px);
-            padding: 5px;
-            margin-top: 5px;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-        }
-        button {
-            padding: 10px 20px;
-            background-color: #007bff;
-            color: #fff;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-        }
-    </style>
+    <title>Formulário Básico</title>
 </head>
 <body>
 
-<div class="container">
-    <div class="question">
-        <label for="tired">Cansado de um dia longo?</label>
-        <input type="text" id="tired" placeholder="Resposta (Sim ou Não)">
-    </div>
-    <div class="question">
-        <label for="hours">Quantas horas trabalhaste hoje?</label>
-        <input type="text" id="hours" placeholder="Resposta (número de horas)">
-    </div>
-    <div class="question">
-        <label for="drink">Faz a tua escolha: Whiskey ou Cerveja</label>
-        <input type="text" id="drink" placeholder="Resposta (Whiskey ou Cerveja)">
-    </div>
-    <button>Enviar</button>
-</div>
+<h1>Formulário Básico</h1>
 
-<script>
-    document.querySelector('button').addEventListener('click', function() {
-        var respostas = document.querySelectorAll('input[type="text"]');
-        var mensagem = '';
+<form>
+    <label for="nome">Nome:</label><br>
+    <input type="text" id="nome" name="nome"><br><br>
 
-        if (respostas[0].value.toLowerCase() === 'sim') {
-            mensagem += 'Sério? Espero que possa relaxar em breve!';
-        } else {
-            mensagem += 'Tudo bem, espero que possa descansar mais tarde.';
-        }
+    <label for="email">Email:</label><br>
+    <input type="email" id="email" name="email"><br><br>
 
-        var horas = parseInt(respostas[1].value);
-        if (!isNaN(horas)) {
-            if (horas < 8) {
-                mensagem += ' Só? Trabalha malandro!';
-            } else if (horas > 8 && horas < 24) {
-                mensagem += ' Uff! Tenho a solução para amanhã!';
-            } else {
-                mensagem += ' Introduz um número a sério...';
-            }
-        } else {
-            mensagem += ' Introduz um número a sério...';
-        }
-
-        var bebida = respostas[2].value.toLowerCase();
-        if (bebida === 'whiskey') {
-            mensagem += ' Boa escolha!';
-        } else if (bebida === 'cerveja') {
-            mensagem += ' Tenta outra vez...';
-        } else {
-            mensagem += ' Sê sério...';
-        }
-
-        alert(mensagem);
-    });
-</script>
+    <input type="submit" value="Enviar">
+</form>
 
 </body>
 </html>
